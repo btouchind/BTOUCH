@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BTouch develops smart, functional, and customizable AI-powered prosthetic arms designed to restore independence and improve everyday life." />
+  <meta name="keywords" content="BTouch, prosthetic arm, AI prosthetics, ESP32, biomedical, India, affordable prosthetics" />
+  <meta property="og:title" content="BTouch — Revolutionary AI-Powered Prosthetic Arms" />
+  <meta property="og:description" content="Smart, functional, and customizable prosthetic arms designed to restore independence and improve everyday life." />
+  <meta property="og:type" content="website" />
+  <title>BTouch — Revolutionary AI-Powered Prosthetic Arms</title>
+  <link rel="icon" type="image/png" href="images/btouch-logo-icon.png">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="top-sentinel" style="position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none;z-index:9999;"></div>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAVBAR
+     ══════════════════════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+
+    <!-- Logo -->
+    <a href="#hero" class="nav-logo" id="logo-link" aria-label="BTouch Home">
+      <div class="nav-logo-icon" aria-hidden="true">
+        <span class="logo-icon-mask"></span>
+      </div>
+      <div class="nav-logo-text" aria-hidden="true">
+        <span class="logo-text-b"></span>
+        <span class="logo-text-touch"></span>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="nav-links" role="list">
+      <li><a href="#about" id="nav-about">About</a></li>
+      <li><a href="#story" id="nav-story">Vision</a></li>
+      <li><a href="#products" id="nav-products">Products</a></li>
+      <li><a href="#internships" id="nav-internships">Internships</a></li>
+      <li><a href="#contact" id="nav-contact">Contact</a></li>
+    </ul>
+
+    <!-- Right Controls -->
+    <div class="nav-right">
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" aria-label="Toggle theme" title="Switch to Light Mode">
+        <span id="theme-icon">
+          <!-- Moon icon (default dark mode) -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </span>
+      </button>
+      <!-- Hamburger (Mobile) -->
+      <button id="nav-hamburger" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="menu" aria-label="Mobile navigation">
+  <a href="#about" role="menuitem" id="mob-about">About</a>
+  <a href="#story" role="menuitem" id="mob-story">Vision</a>
+  <a href="#products" role="menuitem" id="mob-products">Products</a>
+  <a href="#internships" role="menuitem" id="mob-internships">Internships</a>
+  <a href="#contact" role="menuitem" id="mob-contact">Contact</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO SECTION
+     ══════════════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero">
+  <!-- Background layers -->
+  <div class="absolute inset" style="position:absolute;inset:0;z-index:0;">
+    <div class="circuit-pattern" style="position:absolute;inset:0;opacity:0.4;"></div>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%, hsl(262 60% 58% / 0.07) 0%, transparent 70%);"></div>
+    <div class="glow-orb" style="width:500px;height:500px;top:-10%;left:-10%;"></div>
+    <div class="glow-orb" style="width:300px;height:300px;bottom:15%;right:5%;background:hsl(262,80%,92%);opacity:0.04;"></div>
+  </div>
+
+  <div class="hero-inner" style="position:relative;z-index:2;">
+    <!-- Text Column -->
+    <div class="hero-text">
+      <span class="badge badge-filled" style="margin-bottom:2rem;">Pioneering the Future</span>
+
+      <h1 class="hero-title">
+        <span class="heading-gradient">The Future</span>
+        <span class="text-lavender-gradient"> of</span><br />
+        <span style="color:var(--fg);">Human Mobility</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Empowering individuals with prosthetic technology designed to restore independence, confidence, and freedom of movement.
+      </p>
+      <p class="hero-desc">
+        At BTouch, we believe that disability should never limit potential. Through thoughtfully designed products and community-focused initiatives, we work to enhance mobility, accessibility, and quality of life for people of all abilities.</br>Transforming Lives Through Technology.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#products" class="btn-lavender" id="hero-cta-explore">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Explore Our Product
+        </a>
+        <a href="#contact" class="btn-outline" id="hero-cta-contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.12 6.12l1.02-.93a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+          Get in Touch
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Column -->
+    <div id="hero-arm-wrap" class="hero-image-wrap" style="position:relative;cursor:grab;">
+      <div class="hero-glow-ring animate-pulse-glow"></div>
+      <div class="hero-glow-ring-2"></div>
+      <img
+        id="hero-arm"
+        src="images/hero-arm.jpeg"
+        alt="BTouch AI-Powered Prosthetic Arm"
+        width="1024"
+        height="1536"
+        loading="eager"
+        fetchpriority="high"
+        style="position:relative;width:100%;max-width:480px;margin:0 auto;will-change:transform;"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     ABOUT SECTION
+     ══════════════════════════════════════════════════════════ -->
+<section id="about" class="section-padding" aria-labelledby="about-heading">
+  <div class="section-divider"></div>
+  <div class="glow-orb" style="width:500px;height:500px;top:10%;left:-10%;opacity:0.05;"></div>
+
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="badge badge-outline" style="margin-bottom:1.25rem;">Who We Are</span>
+      <h2 id="about-heading" class="heading-gradient">About BTouch</h2>
+      <p>Smart solutions designed to empower independence and accessibility.</p>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="about-grid">
+      <!-- Image -->
+      <div class="about-image-wrap">
+        <div class="about-image-glow"></div>
+        <div class="glass-card about-image-card" style="padding:0.75rem;">
+          <img
+            src="images/chronicle.PNG"
+            alt="BTouch prosthetic hand prototype"
+            width="890"
+            height="554"
+            loading="lazy"
+            decoding="async"
+            style="border-radius:0.5rem;width:100%;aspect-ratio:4/3;object-fit:cover;"
+          />
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="about-text">
+        <p>
+          BTouch is dedicated to improving the lives of individuals with disabilities through innovative assistive technologies and inclusive solutions. We believe that everyone deserves equal opportunities, independence, and the freedom to participate fully in everyday life.
+        </p>
+        <p>
+          Our mission is to develop accessible, affordable, and user-centered products that enhance mobility, communication, and daily living. By combining technology, creativity, and compassion, we strive to remove barriers and create a more inclusive future for all.
+        </p>
+        <p>
+          Beyond innovation, BTouch works closely with communities, organizations, and individuals to understand real-world challenges and deliver meaningful solutions that make a lasting impact.
+        </p>
+        <p>
+          Empowering Lives. Enabling Independence. Building Inclusion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     STORY / TIMELINE SECTION
+     ══════════════════════════════════════════════════════════ -->
+<section id="story" class="section-padding" aria-labelledby="story-heading">
+  <div style="position:absolute;inset:0;" class="circuit-pattern" style="opacity:0.1;"></div>
+  <div class="glow-orb" style="width:500px;height:500px;top:20%;left:50%;transform:translateX(-50%);opacity:0.04;"></div>
+
+  <div class="container" style="position:relative;z-index:1;">
+    <!-- Header -->
+    <div class="text-center" style="margin-bottom:5rem;text-align:center;">
+      <span class="badge badge-outline" style="margin-bottom:1.25rem;">Our Story</span>
+      <h2 id="story-heading" class="heading-gradient" style="font-size:clamp(2rem,5vw,4rem);letter-spacing:0.06em;text-transform:uppercase;">The BTouch Journey</h2>
+      <div class="divider-line" style="width:4rem;height:2px;background:linear-gradient(90deg,var(--lavender),var(--lavender-dark));margin:1.5rem auto 0;border-radius:2px;opacity:0.6;"></div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-wrapper">
+      <div class="timeline-line"></div>
+
+      <!-- 1. The Beginning -->
+      <div class="timeline-row">
+        <div class="timeline-col-left">
+          <div class="glass-card timeline-card p-6">
+            <span class="badge badge-outline" style="font-size:0.6rem;letter-spacing:0.2em;margin-bottom:0.75rem;">The Beginning</span>
+            <h3 class="heading-gradient">Where the Journey Started</h3>
+            <p>Behind every product is a person, a challenge, and a story worth hearing. BTouch was born from the desire to listen, understand, and create solutions that address real-world needs rather than assumptions.</p>
+            <p>From community interactions to hands-on testing, every step of our journey has been shaped by the people we aim to support.</p>
+            <img src="images/story-beginning.PNG" alt="BTouch prosthetic arm beginning" width="1300" height="738" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-col-empty"></div>
+      </div>
+
+      <!-- 2. The Challenge -->
+      <div class="timeline-row">
+        <div class="timeline-col-empty"></div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-col-right">
+          <div class="glass-card timeline-card p-6">
+            <span class="badge badge-outline" style="font-size:0.6rem;letter-spacing:0.2em;margin-bottom:0.75rem;">The Challenge</span>
+            <h3 class="heading-gradient">A Problem Worth Solving</h3>
+            <p>Millions worldwide live with limb loss, yet most prosthetics remain prohibitively expensive, mechanically rigid, and disconnected from the user's intent.</p>
+            <p>We saw the gap — between what technology could offer and what people actually received. That disparity fueled our mission.</p>
+            <img src="images/story-challenge.webp" alt="Real-world prosthetic challenges" width="1124" height="673" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. The Journey -->
+      <div class="timeline-row">
+        <div class="timeline-col-left">
+          <div class="glass-card timeline-card p-6">
+            <span class="badge badge-outline" style="font-size:0.6rem;letter-spacing:0.2em;margin-bottom:0.75rem;">The Journey</span>
+            <h3 class="heading-gradient">Shaped by Experience</h3>
+            <p>Every step forward came through learning, testing, and listening. From early concepts to real-world trials, our journey has been guided by the people who use our solutions and the feedback they generously shared.</p>
+            <p>Each interaction revealed new insights, helping us refine our ideas and create products that are more practical, comfortable, and meaningful in everyday life.</p>
+            <img src="images/story-journey.webp" alt="BTouch lab development and prototyping" width="1920" height="1080" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-col-empty"></div>
+      </div>
+
+      <!-- 4. The Vision -->
+      <div class="timeline-row">
+        <div class="timeline-col-empty"></div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-col-right">
+          <div class="glass-card timeline-card p-6">
+            <span class="badge badge-outline" style="font-size:0.6rem;letter-spacing:0.2em;margin-bottom:0.75rem;">The Vision</span>
+            <h3 class="heading-gradient">Empowering Every Ability</h3>
+            <p>We envision a world where physical challenges never limit potential, and accessibility creates opportunities for everyone to thrive.</p>
+            <p>Inclusive. Empowering. Life-Changing.</br>Innovative assistive solutions that promote independence, confidence, and freedom every day.</p>
+            <img src="images/story-vision.PNG" alt="BTouch vision for accessible prosthetics" width="960" height="1280" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. The Impact -->
+      <div class="timeline-row">
+        <div class="timeline-col-left">
+          <div class="glass-card timeline-card p-6">
+            <span class="badge badge-outline" style="font-size:0.6rem;letter-spacing:0.2em;margin-bottom:0.75rem;">The Impact</span>
+            <h3 class="heading-gradient">Changing Lives</h3>
+            <p>Real people. Real transformation. Our prosthetic hands restore not just grip — but confidence, dignity, and the freedom to live fully.</p>
+            <p>From rehabilitation centres to everyday homes, BTouch is making intelligent prosthetics a reality for those who need it most.</p>
+            <img src="images/story-impact.webp" alt="BTouch real-world impact" width="1600" height="900" loading="lazy" decoding="async" />
+          </div>
+        </div>
+        <div class="timeline-center"><div class="timeline-dot"></div></div>
+        <div class="timeline-col-empty"></div>
+      </div>
+
+    </div><!-- /timeline-wrapper -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PRODUCTS SECTION
+     ══════════════════════════════════════════════════════════ -->
+<section id="products" class="section-padding" style="background:var(--bg-surface-1);" aria-labelledby="products-heading">
+  <div style="position:absolute;inset:0;" class="circuit-pattern" style="opacity:0.15;"></div>
+  <div class="glow-orb" style="width:500px;height:500px;top:10%;left:50%;transform:translateX(-50%);"></div>
+  <div class="section-divider"></div>
+
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-header">
+      <span class="badge badge-outline" style="margin-bottom:1.25rem;">Our Focus Areas</span>
+      <h2 id="products-heading" class="heading-gradient">Our Products</h2>
+      <p>Discover our range of advanced mobility and assistive devices built for greater freedom and confidence.</p>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- Card 1: Prosthetic Hands -->
+      <div class="glass-card product-card" id="product-card-1">
+        <div class="product-icon">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 120"
+              width="120"
+              height="120"
+              fill="none">
+
+            <g stroke="#A855F7"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M30 55 V25 Q30 18 35 18 Q40 18 40 25 V55" />
+              <path d="M45 55 V15 Q45 8 50 8 Q55 8 55 15 V55" />
+
+              <path d="M60 55 V25 Q60 18 65 18 Q70 18 70 25 V55" />
+
+              <path d="M20 58 V35 Q20 28 25 28 Q30 28 30 35 V58" />
+
+              <path d="M70 62
+                      Q78 52 85 52
+                      Q90 52 90 58
+                      V72
+                      Q90 78 84 78
+                      H75" />
+
+              <path d="
+                M20 58
+                Q20 82 22 88
+                Q25 98 35 108
+                H65
+                Q78 98 82 88
+                Q85 78 85 58" />
+
+              <path d="
+                M20 70
+                Q35 72 45 85" />
+
+              <path d="
+                M80 70
+                Q65 72 55 85" />
+
+              <path d="
+                M46 83
+                C46 78 50 78 50 83
+                C50 78 54 78 54 83
+                C54 88 50 92 50 92
+                C50 92 46 88 46 83 Z" />
+
+              <line x1="35" y1="108" x2="35" y2="118" />
+              <line x1="65" y1="108" x2="65" y2="118" />
+
+              <line x1="35" y1="108" x2="65" y2="108" />
+
+            </g>
+          </svg>  
+        </div>
+        <h3>Prosthetic Hands</h3>
+        <p>Advanced prosthetic hands designed to restore natural movement, functionality, and independence.</p>
+      </div>
+
+      <!-- Card 2: Prosthetic Legs -->
+      <div class="glass-card product-card" id="product-card-2">
+        <div class="product-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+              <defs>
+                <filter id="purple-glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="1.5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <g stroke="#9D7BFA" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#purple-glow)">
+                
+                <path d="M37 12 C37 8, 61 8, 61 12 L59 36 C59 41, 39 42, 39 36 Z" />
+                <path d="M53 25 L55 31" stroke-width="1.2" opacity="0.8" />
+                <path d="M50 28 L51 31" stroke-width="1.2" opacity="0.8" />
+
+                <path d="M44 41 C44 39, 54 39, 54 41 L52 44 H46 Z" />
+                
+                <circle cx="49" cy="47" r="4" stroke-width="1.8" />
+                <circle cx="49" cy="47" r="1.2" fill="#9D7BFA" />
+
+                <path d="M45 51 C43 54, 42 59, 45 64 L47 70 H51 L53 64 C55 59, 54 54, 52 51 Z" />
+                <circle cx="49" cy="57" r="2" stroke-width="1.2" />
+
+                <circle cx="48" cy="74" r="3" stroke-width="1.8" />
+                <circle cx="48" cy="74" r="1" fill="#9D7BFA" />
+
+                <path d="M44 76 L39 77 C36 78, 36 82, 40 82 L65 82 C68 82, 68 80, 63 78 L51 76 Z" />
+                
+                <path d="M40 82 C43 78, 46 78, 47 82" stroke-width="1.2" />
+                <path d="M54 78 L58 81 M57 77 L61 80" stroke-width="1.2" />
+
+                <path d="M33 86 L65 86" stroke-width="2" />
+                <path d="M30 89 H68 L64 86 H34 Z" fill="#9D7BFA" fill-opacity="0.15" />
+              </g>
+            </svg>
+        </div>
+        <h3>Prosthetic Legs</h3>
+        <p>Innovative prosthetic legs that enable confident mobility, balance, and an active lifestyle.</p>
+      </div>
+
+      <!-- Card 3: Smart Wheelchairs -->
+      <div class="glass-card product-card" id="product-card-3">
+        <div class="product-icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 80 80"
+                width="120"
+                height="120"
+                fill="none">
+
+              <g stroke="#A855F7"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M20 10 H30
+                        C33 10 35 12 35 15
+                        V40"/>
+                <path d="M35 30 H55 V42 H35"/>
+                <circle cx="32" cy="52" r="16"/>
+                <line x1="32" y1="36" x2="32" y2="68"/>
+                <line x1="16" y1="52" x2="48" y2="52"/>
+                <line x1="21" y1="41" x2="43" y2="63"/>
+                <line x1="43" y1="41" x2="21" y2="63"/>
+                <circle cx="32" cy="52" r="3"/>
+                <line x1="48" y1="48" x2="65" y2="48"/>
+                <line x1="65" y1="48" x2="65" y2="62"/>
+                <circle cx="65" cy="65" r="5"/>
+                <circle cx="58" cy="20" r="1.5"/>
+
+                <path d="M62 17 A5 5 0 0 1 62 23"/>
+                <path d="M66 14 A9 9 0 0 1 66 26"/>
+                <path d="M71 11 A13 13 0 0 1 71 29"/>
+
+              </g>
+            </svg>
+        </div>
+        <h3>Smart Wheelchairs</h3>
+        <p>Intelligent wheelchairs equipped with smart features for enhanced mobility, comfort, and safety. </p>
+      </div>
+
+      <!-- Card 4: Smart Walking Sticks -->
+      <div class="glass-card product-card" id="product-card-4">
+        <div class="product-icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="64"
+                height="64"
+                fill="none">
+              <g stroke="#8B5CF6"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M30 12
+                        C30 8 35 7 39 8
+                        L44 9
+                        C47 10 47 14 44 15
+                        C42 16 40 16 38 15
+                        L35 14"/>
+                <line x1="34" y1="15" x2="24" y2="46"/>
+                <rect x="21" y="46" width="6" height="8" rx="2"/>
+              </g>
+              <g stroke="#8B5CF6"
+                stroke-width="3"
+                stroke-linecap="round"
+                fill="none">
+
+                <circle cx="47" cy="10" r="1.5" fill="#8B5CF6"/>
+
+                <path d="M50 7 A4 4 0 0 1 50 13"/>
+                <path d="M54 4 A8 8 0 0 1 54 16"/>
+              </g>
+            </svg>
+          </div>
+        <h3>Smart Walking Sticks</h3>
+        <p>AI-powered walking sticks that provide navigation assistance and obstacle detection for safer movement.</p>
+      </div>
+
+      <!-- Card 5: Assistive Healthcare Solutions -->
+      <div class="glass-card product-card" id="product-card-5">
+        <div class="product-icon">
+          <svg xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              fill="none">
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <g stroke="#A855F7"
+              stroke-width="16"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+              filter="url(#glow)">
+              <path d="
+                M256 280
+                L170 194
+                C140 164 140 114 180 94
+                C210 80 240 90 256 120
+                C272 90 302 80 332 94
+                C372 114 372 164 342 194
+                Z
+              "/>
+              <path d="
+                M240 145
+                H272
+                V177
+                H304
+                V209
+                H272
+                V241
+                H240
+                V209
+                H208
+                V177
+                H240
+                Z
+              "/>
+              <path d="
+                M110 340
+                C150 300 190 290 230 320
+                C245 332 260 336 278 336
+                H330
+                C350 336 364 348 364 366
+                C364 384 350 396 330 396
+                H220
+              "/>
+
+              <path d="
+                M364 366
+                L420 320
+                C445 300 470 305 480 322
+                C490 340 484 360 462 382
+                L370 470
+                C340 500 295 500 250 500
+                H175
+                C140 500 110 490 90 465
+                L60 360
+              "/>
+            </g>
+          </svg>
+        </div>
+        <h3>Assistive Healthcare Solutions</h3>
+        <p>Technology-driven healthcare solutions that improve accessibility, well-being, and quality of life.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     INTERNSHIP / CAREERS SECTION
+     ══════════════════════════════════════════════════════════ -->
+<section id="internships" class="section-padding" style="background:var(--bg-surface-1);" aria-labelledby="intern-heading">
+  <div class="glow-orb" style="width:400px;height:400px;bottom:10%;left:-8%;opacity:0.05;"></div>
+  <div class="section-divider"></div>
+
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-header">
+      <span class="badge badge-outline" style="margin-bottom:1.25rem;">Join Us</span>
+      <h2 id="intern-heading" class="heading-gradient">Careers at B-Touch India</h2>
+      <p>We offer internship opportunities in biomedical engineering, embedded systems, prosthetic design, hardware development, and research.</p>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- Internship Form -->
+    <div class="glass-card form-card">
+      <!-- Header -->
+      <div class="form-card-header">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--lavender)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+        <h3 class="heading-gradient">Apply for Internship</h3>
+      </div>
+
+      <!-- Success Message -->
+      <div id="internship-success" class="form-success" role="status" aria-live="polite">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Application submitted successfully! We'll get back to you soon.
+      </div>
+
+      <form id="internship-form" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="intern-name" class="form-label">Full Name</label>
+          <input id="intern-name" type="text" name="full_name" class="form-input" placeholder="Enter your full name" autocomplete="name" />
+          <span class="form-error" data-error="full_name"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="intern-email" class="form-label">Email Address</label>
+          <input id="intern-email" type="email" name="email" class="form-input" placeholder="you@example.com" autocomplete="email" />
+          <span class="form-error" data-error="email"></span>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+          <label for="intern-phone" class="form-label">Phone Number</label>
+          <input id="intern-phone" type="tel" name="phone" class="form-input" placeholder="Enter your phone number" autocomplete="tel" />
+          <span class="form-error" data-error="phone"></span>
+        </div>
+
+        <!-- Role -->
+        <div class="form-group">
+          <label for="intern-role" class="form-label">Role You're Interested In</label>
+
+          <select id="intern-role" name="role" class="form-input">
+            <option value="" disabled selected>Select a role</option>
+            <option value="Biomedical Engineering">Biomedical Engineering</option>
+            <option value="Embedded Systems">Embedded Systems</option>
+            <option value="Prosthetic Design">Prosthetic Design</option>
+            <option value="Hardware Development">Hardware Development</option>
+            <option value="Research & Development">Research & Development</option>
+            <option value="Software Development">Software Development</option>
+            <option value="UI/UX Design">UI/UX Design</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <input
+            type="text"
+            id="other-role"
+            name="otherRole"
+            class="form-input"
+            placeholder="Please specify your role"
+            style="display: none; margin-top: 10px;"
+          >
+
+          <span class="form-error" data-error="role"></span>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+          <label for="intern-message" class="form-label">Tell Us About Yourself</label>
+          <textarea id="intern-message" name="message" class="form-input" rows="4" placeholder="Share your background, skills, and why you're interested..."></textarea>
+          <span class="form-error" data-error="message"></span>
+        </div>
+
+        <button type="submit" class="btn-lavender" style="width:100%;justify-content:center;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Apply for Internship
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     CONTACT SECTION
+     ══════════════════════════════════════════════════════════ -->
+<section id="contact" class="section-padding" style="background:var(--bg);" aria-labelledby="contact-heading">
+  <div class="glow-orb" style="width:500px;height:500px;bottom:-10%;left:50%;transform:translateX(-50%);opacity:0.04;"></div>
+  <div class="section-divider"></div>
+
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="section-header">
+      <span class="badge badge-outline" style="margin-bottom:1.25rem;">Get in Touch</span>
+      <h2 id="contact-heading" class="heading-gradient">Contact &amp; Office Info</h2>
+      <p>Have questions about our technology or want to collaborate? Reach out to us.</p>
+      <div class="divider-line"></div>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="glass-card contact-form" style="padding:2.5rem;">
+        <h3 class="heading-gradient" style="margin-bottom:1.5rem;">Send us a message</h3>
+        <form id="contact-form">
+          <div class="input-row">
+            <input type="text" name="full_name" class="form-input" placeholder="Full Name" required autocomplete="name" id="contact-name" aria-label="Full Name" />
+            <input type="email" name="email" class="form-input" placeholder="Email Address" required autocomplete="email" id="contact-email" aria-label="Email Address" />
+          </div>
+          <input type="text" name="subject" class="form-input" placeholder="Subject" required style="margin-bottom:1.25rem;" id="contact-subject" aria-label="Subject" />
+          <textarea name="message" class="form-input" placeholder="Your Message" rows="5" required style="resize:none;margin-bottom:1.25rem;" id="contact-message" aria-label="Message"></textarea>
+          <button type="submit" class="btn-lavender">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Office Information -->
+      <div class="contact-info">
+        <!-- Office Details Card -->
+        <div class="glass-card office-info-card" style="padding:2rem;margin-bottom:1.5rem;">
+          <h3 class="heading-gradient contact-info-title">Office Information</h3>
+
+          <div class="office-info-item">
+            <div class="office-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="office-info-label">Address</p>
+              <p class="office-info-value">SNS College of Technology, Sathya Main Road,<br/>Vazhiyampalayam, Saravanampatti Post,<br/>Coimbatore, Tamil Nadu, India — 641035</p>
+            </div>
+          </div>
+
+          <div class="office-info-item">
+            <div class="office-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.12 6.12l1.02-.93a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="office-info-label">Phone</p>
+              <p class="office-info-value">+91 8870323526</p>
+            </div>
+          </div>
+
+          <div class="office-info-item">
+            <div class="office-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="office-info-label">Email</p>
+              <p class="office-info-value"><a href="mailto:btouchind@gmail.com" style="color:var(--lavender);">btouchind@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="office-info-item">
+            <div class="office-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="office-info-label">Hours</p>
+              <p class="office-info-value">Monday — Friday, 09:00 AM — 07:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Support -->
+        <div class="glass-card quick-support">
+          <h3 class="heading-gradient">Quick Support</h3>
+          <p>For urgent technical support or product inquiries, our team is available during business hours.</p>
+          <a href="mailto:btouchind@gmail.com" id="quick-support-email" aria-label="Email BTouch support">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            btouchind@gmail.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════ -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" aria-label="BTouch Home">
+          <div class="nav-logo-icon" aria-hidden="true">
+            <span class="logo-icon-mask"></span>
+          </div>
+          <div class="nav-logo-text" aria-hidden="true">
+            <span class="logo-text-b"></span>
+            <span class="logo-text-touch"></span>
+          </div>
+        </a>
+        <p>Pioneering AI-powered prosthetic technology for a more capable world.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about" id="footer-about">About</a></li>
+          <li><a href="#story" id="footer-vision">Vision</a></li>
+          <li><a href="#products" id="footer-products">Products</a></li>
+          <li><a href="#internships" id="footer-internships">Internships</a></li>
+          <li><a href="#contact" id="footer-contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:btouchind@gmail.com" id="footer-email">btouchind@gmail.com</a></li>
+          <li><a href="tel:+918870323526" id="footer-phone">+91 8870323526</a></li>
+          <li><span style="color:var(--fg-muted);font-size:0.875rem;">Coimbatore, Tamil Nadu,<br/>India — 641035</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="footer-year">2025</span> BTouch India. All rights reserved. Built with ♥ for a more capable world.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Notification Container -->
+<div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+
+<!-- Scripts -->
+<script>
+  // Dynamic footer year
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
+<script src="script.js?v=1.0.1" defer></script>
+</body>
+</html>
+
